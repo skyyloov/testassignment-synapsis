@@ -1,14 +1,13 @@
-import Link from "next/link";
-
 const Navbar = () => (
     <nav className="navbar">
-        <Link href="/">
-            <a className="navbar-brand">Crud App</a>
-        </Link>
-        <Link href="/new">
-            <a className="create">Create User</a>
-        </Link>
+        <div class="ui inverted top fixed menu">
+            <div class="item">
+            </div>
+            <a href="/" class="item menu-brand">Crud App</a>
+            <a href="/new" class="item">Create User</a>
+        </div>
     </nav>
+
 )
 
 

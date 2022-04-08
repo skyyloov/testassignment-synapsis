@@ -1,38 +1,50 @@
 import Link from "next/link";
 import fetch from 'isomorphic-unfetch';
-
-import { Button, Card } from 'semantic-ui-react';
+import { Button, Card, Container, Grid, Header, Segment } from 'semantic-ui-react';
 
 const Index = ({ user }) => {
   return (
-    <div className="notes-container">
-      <h1>Users</h1>
-      <div className="grid wrapper">
-        {user.map(user => {
-          return (
-            <div key={user._id}>
-              <Card>
-                <Card.Content>
-                  <Card.Header>
-                    <Link href={`/${user._id}`}>
-                      <a>{user.firstName}</a>
-                    </Link>
-                  </Card.Header>
-                </Card.Content>
-                <Card.Content extra>
-                  <Link href={`/${user._id}`}>
-                    <Button primary>View</Button>
-                  </Link>
-                  <Link href={`/${user._id}/edit`}>
-                    <Button primary>Edit</Button>
-                  </Link>
-                </Card.Content>
-              </Card>
-            </div>
-          )
-        })}
-      </div>
-    </div>
+    <Container style={{ marginTop: '5em' }}>
+
+      <Grid.Row>
+        <Grid.Column>
+          <Header as='h1' dividing>
+            User List
+          </Header>
+        </Grid.Column>
+      </Grid.Row>
+
+      <Grid columns='equal' style={{ marginTop: '2em' }}>
+        <Grid.Row columns={4}>
+          {user.map(user => {
+            return (
+              <Grid.Column style={{ marginBottom: '1em' }}>
+                <div key={user._id}>
+                  <Card>
+
+                    <Card.Content>
+                      <Segment.Group>
+                        <Segment as='h3'>FirstName : {user.firstName}</Segment>
+                        <Segment as='h3'>LastName : {user.lastName}</Segment>
+                      </Segment.Group>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Link href={`/${user._id}`}>
+                        <Button primary>View</Button>
+                      </Link>
+                      <Link href={`/${user._id}/edit`}>
+                        <Button primary>Edit</Button>
+                      </Link>
+                    </Card.Content>
+                  </Card>
+                </div>
+              </Grid.Column>
+            )
+          })}
+        </Grid.Row>
+      </Grid>
+
+    </Container >
   )
 }
 
