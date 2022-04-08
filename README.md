@@ -1,3 +1,12 @@
+
+Saya menggunakan NextJs, dan konsep crud ini saya terapkan menggunakan RestAPI dimana semua endpoint berada pada folder pages/api/user,
+
+dan untuk konteksi Mongodb saya menggunakan NextJs yang sudah terinstall Mongodb secara otomatis didalamnya, saya hanya mengubah .env.local lalu memasukkan MongoURL dan Databasenya, untuk MongoDB nya sendiri saya menggunakan cloud MongoDB Atlas yang gratisan untuk mengelola database,
+
+untuk mengambil data dari server saya menggunakan isomorphic unfetch
+
+
+
 ## Example app using MongoDB
 
 [MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
